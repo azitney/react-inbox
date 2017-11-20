@@ -67,7 +67,7 @@ class App extends Component {
 
   updateRemoveLabel = (labels) => {
     let filteredCheck = this.state.messageList.filter((message)=> message.check)
-    filteredCheck.map((message)=> message.label.splice(message.label.indexOf(labels)))
+    filteredCheck.map((message)=> message.label.splice(message.label.indexOf(labels), 1))
     filteredCheck.map((message)=> message.check = false)
     this.setState({messageList: this.state.messageList})
   }
