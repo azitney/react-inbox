@@ -60,7 +60,7 @@ class App extends Component {
 
   updateAddLabel = (labels) => {
     let filteredCheck = this.state.messageList.filter((message)=> message.check)
-    filteredCheck.map((message)=> message.label.push(labels))
+    filteredCheck.map((message)=> message.label.includes(labels)? ' ' : message.label.push(labels) )
     filteredCheck.map((message)=> message.check = false)
     this.setState({messageList: this.state.messageList})
   }
