@@ -55,7 +55,6 @@ class App extends Component {
 
   updateDelete = () => {
     let filteredCheck = this.state.messageList.filter((message)=> !message.check)
-    console.log(filteredCheck)
     this.setState({messageList: filteredCheck})
   }
 
@@ -85,6 +84,7 @@ class App extends Component {
           updateDeleteFunc = {this.updateDelete}
           updateAddLabelFunc = {this.updateAddLabel}
           updateRemoveLabelFunc = {this.updateRemoveLabel}
+          messageList = {this.state.messageList}
         />
         <MessageList
           messageList = {this.state.messageList} updateStarFunc={this.updateStar}
